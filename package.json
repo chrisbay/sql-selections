@@ -1,21 +1,16 @@
 {
-  "name": "demo-workshopper",
-  "version": "1.0.4",
+  "name": "sql-selections",
+  "version": "0.1.0",
   "repository": {
     "type": "git",
-    "url": "git://github.com/linclark/demo-workshopper"
+    "url": ""
   },
-  "license": "BSD-3-Clause",
-  "bin": "./demo-workshopper.js",
+  "license": "GNU GPL v2",
+  "bin": "./sql-selections.js",
   "dependencies": {
     "workshopper": "1.x",
     "workshopper-exercise": "^0.2.2",
     "workshopper-wrappedexec": "^0.1.1",
-    "workshopper-boilerplate": "0.0.1",
-    "hyperquest": "0.1.x",
-    "hapi": "6.x.x",
-    "colors-tmpl": "^1.0.0",
-    "through2": "^0.4.1",
-    "bl": "^0.8.0"
+	"mysql": "^2.6"
   }
 }

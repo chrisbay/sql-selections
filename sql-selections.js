@@ -8,9 +8,9 @@ function fpath (f) {
 }
 
 workshopper({
-    name        : 'demo-workshopper',
-    title       : 'Demo Workshopper',
-    subtitle    : 'Learn how to create a workshopper lesson',
+    name        : 'sql-selections',
+    title       : 'SQL Selections',
+    subtitle    : 'Learn basic SQL',
     appDir      : __dirname,
     menuItems   : [],
     exerciseDir : fpath('./exercises/')
