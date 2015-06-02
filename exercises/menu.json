@@ -1,3 +1,16 @@
 [
-	"Hello, MySQL"
+	"Hello, MySQL",
+	"Select One",
+	"Select Multiple",
+	"Select All",
+	"Order by Single",
+	"Order by Multiple",
+	"Where Clause",
+	"Where with Booleans",
+	"Where with Parens",
+	"Where Not",
+	"Where Similar",
+	"Where Similar, Part II",
+	"Inner Join",
+	"Inner Join, Part II"
 ]

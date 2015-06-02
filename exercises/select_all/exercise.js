@@ -56,9 +56,7 @@ exercise.addProcessor(function (mode, callback) {
         database : 'sql_selections'
     });
 
-    function query(mode, queryStr, type, _callback){
-		
-		if (mode == "run" && type == "solution") return;
+    function query(queryStr, type, _callback){
 
         pool.getConnection(function(err, connection) {
             if (err) {
@@ -70,7 +68,6 @@ exercise.addProcessor(function (mode, callback) {
                 if (err) throw err;
 
                 _this[type + "Results"] = rows;
-				//if (mode == "run") connection.rollback(function(){});
                 _callback.call(_this);
             });
 
@@ -79,8 +76,8 @@ exercise.addProcessor(function (mode, callback) {
     }
 
     var _this = this;
-    query("verify", solutionQuery, "solution", compareResults);
-    query("run", submissionQuery, "submission", compareResults);
+    if (mode == "verify") query(solutionQuery, "solution", compareResults);
+    query(submissionQuery, "submission", compareResults);
 
 });
 
