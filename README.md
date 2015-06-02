@@ -33,7 +33,7 @@ mysql -uroot -proot
 ```
 You should now have a prompt: `mysql>`. Run the following two commands:
 ```sql
-CREATE USER sql_selections IDENTIFIED BY 'iloverelationaldata';
+CREATE USER 'sql_selections'@'localhost' IDENTIFIED BY 'iloverelationaldata';
 GRANT ALL ON sql_selections.* TO 'sql_selections'@'localhost';
 ```
 
@@ -72,7 +72,7 @@ sql-selections run solution.js
 This will display the results of your query in a [JSON](http://en.wikipedia.org/wiki/JSON)-like format. These results may look a bit different from what you see when interacting more directly with MySQL, and error messages may be mixed in with Javascript errors, and thus harder to decipher, so this is the least-recommended method of testing your queries.
 
 ## Getting ready
-If you're new to SQL, spend a couple of minutes reading the w3schools [SQL Intro](http://www.w3schools.com/sql/sql_intro.asp) and [SQL Syntax](http://www.w3schools.com/sql/sql_syntax.asp) articles. (The [w3schools SQL Tutorial section(http://www.w3schools.com/sql/default.asp) should be your go-to reference for these exercises.)
+If you're new to SQL, spend a couple of minutes reading the w3schools [SQL Intro](http://www.w3schools.com/sql/sql_intro.asp) and [SQL Syntax](http://www.w3schools.com/sql/sql_syntax.asp) articles. (The [w3schools SQL Tutorial section](http://www.w3schools.com/sql/default.asp) should be your go-to reference for these exercises.)
 
 ## Getting started
 Once you're ready to dive in, set up your directories, grab your favorite text editor and a couple of Terminal windows, and run `sql-selections`.
