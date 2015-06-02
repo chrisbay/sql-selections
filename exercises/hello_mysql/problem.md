@@ -24,5 +24,5 @@ Each of our exercises will use the same boilerplate, as below. Place your query 
 ```javascript
 var query = ""; // place your solution within the query string
 
-module.exports = query
+module.exports = query;
 ```

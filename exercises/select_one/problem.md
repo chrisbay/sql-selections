@@ -16,7 +16,7 @@ The first query selects two columns from a given table, while the second selects
 
 For example:
 ```sql
-SELECT batting_avg, slugging_pct from PLAYERS;
+SELECT batting_avg, slugging_pct FROM players;
 ```
 
 ## Your Task
