@@ -1,3 +1,3 @@
-var query = "show columns from customers";
+var query = "SELECT * FROM shippers";
 
 module.exports = query

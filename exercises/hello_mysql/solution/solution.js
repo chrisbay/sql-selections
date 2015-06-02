@@ -1,3 +1,3 @@
-var query = "show columns from customers";
+var query = "SHOW COLUMNS FROM customers";
 
 module.exports = query

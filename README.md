@@ -14,9 +14,13 @@ ln -s /Applications/MAMP/Library/bin/mysql /usr/local/bin/mysql
 If you have any setup other than the default MAMP config, edit `scripts/dbconf.sh` to reflect your `mysql` location and connection parameters (MAMP's default user/password are `root/root`). 
 
 ### Set up database
-From any directory, run:
+`cd` to `/usr/local/lib/node_modules/sql-selections/scripts` and run
 ```
-/usr/local/bin/sql-selections/scripts/createdb.sh
+./createdb.sh
+```
+If you encounter an error like the following, it means your MySQL isntance isn't running. Start it up via MAMP
+```
+ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/Applications/MAMP/tmp/mysql/mysql.sock' (2)
 ```
 
 ### Set up user
@@ -27,13 +31,18 @@ mysql -uroot -proot
 You should now have a prompt: `mysql>`. Run the following two commands:
 ```sql
 CREATE USER sql_selections IDENTIFIED BY 'iloverelationaldata';
-GRANT ALL ON sql_selections TO 'sql_selections'@'localhost';
+GRANT ALL ON sql_selections.* TO 'sql_selections'@'localhost';
+```
+
+Test your user by trying to connect via the command line:
+```
+mysql -usql_selections -piloverelationaldata
 ```
 
 ## Restoring data
-If at any point you want or need to restore the database to its original state. From any directory, run:
+If at any point you want or need to restore the database to its original state. From `/usr/local/lib/node_modules/sql-selections/scripts`, run:
 ```
-/usr/local/bin/sql-selections/scripts/restoredb.sh
+./restoredb.sh
 ```
 
 ## Testing your queries
@@ -52,7 +61,7 @@ to connect (note the lack of spaces after the `-u` and `-p` flags).
 ### Local MySQL instance via phpMyAdmin
 If you are running MySQL via MAMP, then you can use the bundled phpMyAdmin instance to interact with the database. Select `sql_selections` from the left-hand pane, and then select the SQL tab.
 
-### `run` command
+### The `sql-selections run` command
 You may use the build-in `run` command by placing your query in the solution file and running:
 ```
 sql-selections run solution.js
@@ -60,7 +69,12 @@ sql-selections run solution.js
 This will display the results of your query in a [JSON](http://en.wikipedia.org/wiki/JSON)-like format. These results may look a bit different from what you see when interacting more directly with MySQL, and error messages may be mixed in with Javascript errors, and thus harder to decipher, so this is the least-recommended method of testing your queries.
 
 ## Getting ready
-If you're new to SQL, spend a couple of minutes reading the [w3schools SQL Intro](http://www.w3schools.com/sql/sql_intro.asp). The [w3schools SQL Tutorial section(http://www.w3schools.com/sql/default.asp) should be your go-to reference for these exercises.
+If you're new to SQL, spend a couple of minutes reading the w3schools [SQL Intro](http://www.w3schools.com/sql/sql_intro.asp) and [SQL Syntax](http://www.w3schools.com/sql/sql_syntax.asp) articles. (The [w3schools SQL Tutorial section(http://www.w3schools.com/sql/default.asp) should be your go-to reference for these exercises.)
 
 ## Getting started
 Once you're ready to dive in, set up your directories, grab your favorite text editor and a couple of Terminal windows, and run `sql-selections`.
+
+## Resources
+For easy reference, here are some of the more useful resources listed throughout the exercise set.
+
+* [`SELECT` syntax](http://www.w3schools.com/sql/sql_select.asp)
