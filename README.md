@@ -4,6 +4,7 @@ Install this workshopper by running the following at a command prompt:
 ```
 npm install -g sql-selections
 ````
+In addition to the instructions below, there is also a walkthrough on setup, submitting solutions via the tutorial framework, and running test queries [on YouTube](https://www.youtube.com/watch?v=rSD58T3B_Pw).
 
 ## Setting up the data
 We assume that you already have a local MySQL server installed. In fact, the default parameters for the database setup scripts assume that you are working on a Mac with the default MAMP installation.
