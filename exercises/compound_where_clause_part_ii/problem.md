@@ -1,7 +1,9 @@
-# Where with Booleans
+# Compound Where Clause, Part II
+
+Last time we used `OR`. Let's give `AND` a spin.
 
 ## Your Task
-Rretrieve list of orders for customer IDs 4 and 7, sorted by the customer ID.
+Retrieve all of the customers from Germany with ID less than 50.
 
 ## References
 * http://www.w3schools.com/sql/sql_where.asp

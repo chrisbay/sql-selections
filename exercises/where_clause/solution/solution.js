@@ -1,3 +1,3 @@
-var query = "show columns from customers";
+var query = "SELECT * FROM customers WHERE customer_id < 15";
 
-module.exports = query
+module.exports = query;
