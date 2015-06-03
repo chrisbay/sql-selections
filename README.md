@@ -50,9 +50,6 @@ If at any point you want or need to restore the database to its original state. 
 ## Testing your queries
 There are a few ways that you can test your queries. These are listed in order of our preference, but you may choose whichever you're more comfortable with.
 
-### w3schools
-The data for this exercise was taken from the [w3schools sandbox database environment](http://www.w3schools.com/sql/trysql.asp?filename=trysql_select_all). You can use this same sandbox to run your queries.
-
 ### Local MySQL instance via command line
 Running MySQL via its command-line utility puts you in direct contact with the database, with no middleman. In a Terminal window, run
 ```
@@ -62,6 +59,11 @@ to connect (note the lack of spaces after the `-u` and `-p` flags).
 
 ### Local MySQL instance via phpMyAdmin
 If you are running MySQL via MAMP, then you can use the bundled phpMyAdmin instance to interact with the database. Select `sql_selections` from the left-hand pane, and then select the SQL tab.
+
+### w3schools
+The data for this exercise was taken from the [w3schools sandbox database environment](http://www.w3schools.com/sql/trysql.asp?filename=trysql_select_all). You can use this same sandbox to run your queries.
+
+Note that if you test your queries here, not only may the data/results be slightly different, but the column and tables names are slightly different. The same basic structure is the same between our database and the w3schools database, but they use different naming conventions.
 
 ### The `sql-selections run` command
 You may use the build-in `run` command by placing your query in the solution file and running:

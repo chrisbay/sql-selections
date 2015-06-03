@@ -17,20 +17,20 @@ exercise.addProcessor(function (mode, callback) {
         if (mode == "verify" && (!this.submissionResults || !this.solutionResults))
             return;
 
-        var us = this.submissionResults;
-        var them = this.solutionResults;
+        var them = this.submissionResults;
+        var us = this.solutionResults;
 
 		if (mode == "verify") {
-	        
+
 			var usJSON = JSON.stringify(us);
 			var themJSON = JSON.stringify(them);
 			var equal = usJSON === themJSON;
-			
+
 	        this.emit(equal ? 'pass' : 'fail', 'Query results match expected');
-			
+
 			console.log("\nSOLUTION\nRows: " + us.length + "\nFields: " + 				(Object.keys(us[0]).join(", ")));
 			console.log("\nSUBMISSION\nRows: " + them.length + "\nFields: " + 				(Object.keys(them[0]).join(", ")));
-			
+
 		} else {
 			console.log(this.submissionResults);
 		}
@@ -57,7 +57,7 @@ exercise.addProcessor(function (mode, callback) {
     });
 
     function query(mode, queryStr, type, _callback){
-		
+
 		if (mode == "run" && type == "solution") return;
 
         pool.getConnection(function(err, connection) {
