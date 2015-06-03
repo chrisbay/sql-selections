@@ -1,7 +1,6 @@
-sql-selections
-================
+# sql-selections
 
-Install this workshopper by running the following at a command prompt: 
+Install this workshopper by running the following at a command prompt:
 ```
 npm install -g sql-selections
 ````
@@ -14,7 +13,7 @@ Try running `mysql` from the command line. If receive a `command not found` mess
 ```
 ln -s /Applications/MAMP/Library/bin/mysql /usr/local/bin/mysql
 ```
-If you have any setup other than the default MAMP config, edit `scripts/dbconf.sh` to reflect your `mysql` location and connection parameters (MAMP's default user/password are `root/root`). 
+If you have any setup other than the default MAMP config, edit `scripts/dbconf.sh` to reflect your `mysql` location and connection parameters (MAMP's default user/password are `root/root`).
 
 ### Set up database
 `cd` to `/usr/local/lib/node_modules/sql-selections/scripts` and run
@@ -33,8 +32,8 @@ mysql -uroot -proot
 ```
 You should now have a prompt: `mysql>`. Run the following two commands:
 ```sql
-CREATE USER 'sql_selections'@'localhost' IDENTIFIED BY 'iloverelationaldata';
-GRANT ALL ON sql_selections.* TO 'sql_selections'@'localhost';
+CREATE USER sql_selections@localhost IDENTIFIED BY 'iloverelationaldata';
+GRANT ALL ON sql_selections.* TO sql_selections@localhost;
 ```
 
 Test your user by trying to connect via the command line:
@@ -74,10 +73,32 @@ This will display the results of your query in a [JSON](http://en.wikipedia.org/
 ## Getting ready
 If you're new to SQL, spend a couple of minutes reading the w3schools [SQL Intro](http://www.w3schools.com/sql/sql_intro.asp) and [SQL Syntax](http://www.w3schools.com/sql/sql_syntax.asp) articles. (The [w3schools SQL Tutorial section](http://www.w3schools.com/sql/default.asp) should be your go-to reference for these exercises.)
 
+You will also need to be comfortable with moving around within an SQL client. After logging in to a command-line client, see which databases are available for use:
+```sql
+SHOW DATABASES;
+```
+Hopefully, you see your `sql_selections` database listed. If not, you might have a permissions error. Now, tell MySQL that you want to use that database:
+```sql
+USE sql_selections;
+```
+Now, you can which tables are part of the database, and which columns are in each table, by using the following commands.
+```sql
+SHOW TABLES;
+```
+```sql
+SHOW COLUMNS IN table_name;
+```
+
+When writing queries, you'll have to properly specify column and table names, and these queries will help you figure out which names you should be using.
+
 ## Getting started
-Once you're ready to dive in, set up your directories, grab your favorite text editor and a couple of Terminal windows, and run `sql-selections`.
+Once you're ready to dive in, set up you problem set directory, grab your favorite text editor and a couple of Terminal windows, and run `sql-selections`.
 
 ## Resources
 For easy reference, here are some of the more useful resources listed throughout the exercise set.
 
 * [`SELECT` syntax](http://www.w3schools.com/sql/sql_select.asp)
+* [`ORDER BY` keyword](http://www.w3schools.com/sql/sql_orderby.asp)
+* [`WHERE` clause](http://www.w3schools.com/sql/sql_where.asp)
+* [`AND` and `OR` operators](http://www.w3schools.com/sql/sql_and_or.asp)
+* [`INNER JOIN` syntax](http://www.w3schools.com/sql/sql_join_inner.asp)
