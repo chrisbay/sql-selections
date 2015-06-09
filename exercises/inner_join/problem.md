@@ -8,7 +8,7 @@ The result of this query is a list of all players (by player_name), along with t
 
 ## Your Task
 
-Retrieve the customer name, along with each order (by order ID) associated with the customer with ID equal 7.
+Retrieve the customer name of the customer with ID equal 7, along with each order (by order ID) that is associated with that customer.
 
 ## References
 * http://www.w3schools.com/sql/sql_like.asp
