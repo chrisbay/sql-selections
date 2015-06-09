@@ -1,3 +1,3 @@
-var query = "show columns from customers";
+var query = "SELECT * FROM categories WHERE category_name LIKE 'Con%'";
 
 module.exports = query

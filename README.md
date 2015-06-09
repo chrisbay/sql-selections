@@ -2,7 +2,7 @@
 
 Install this workshopper by running the following at a command prompt:
 ```
-npm install -g sql-selections
+$ npm install -g sql-selections
 ````
 In addition to the instructions below, there is also a walkthrough on setup, submitting solutions via the tutorial framework, and running test queries [on YouTube](https://www.youtube.com/watch?v=rSD58T3B_Pw).
 
@@ -12,14 +12,14 @@ We assume that you already have a local MySQL server installed. In fact, the def
 ### Connecting
 Try running `mysql` from the command line. If receive a `command not found` message, set up a link:
 ```
-ln -s /Applications/MAMP/Library/bin/mysql /usr/local/bin/mysql
+$ ln -s /Applications/MAMP/Library/bin/mysql /usr/local/bin/mysql
 ```
 If you have any setup other than the default MAMP config, edit `scripts/dbconf.sh` to reflect your `mysql` location and connection parameters (MAMP's default user/password are `root/root`).
 
 ### Set up database
 `cd` to `/usr/local/lib/node_modules/sql-selections/scripts` and run
 ```
-./createdb.sh
+$ ./createdb.sh
 ```
 If you encounter an error like the following, it means your MySQL isntance isn't running. Start it up via MAMP
 ```
@@ -29,7 +29,7 @@ ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/Applica
 ### Set up user
 Connect to your database via the command line (adjusting accordingly for non-MAMP situations):
 ```
-mysql -uroot -proot
+$ mysql -uroot -proot
 ```
 You should now have a prompt: `mysql>`. Run the following two commands:
 ```sql
@@ -39,13 +39,13 @@ GRANT ALL ON sql_selections.* TO sql_selections@localhost;
 
 Test your user by trying to connect via the command line:
 ```
-mysql -usql_selections -piloverelationaldata
+$ mysql -usql_selections -piloverelationaldata
 ```
 
 ## Restoring data
 If at any point you want or need to restore the database to its original state. From `/usr/local/lib/node_modules/sql-selections/scripts`, run:
 ```
-./restoredb.sh
+$ ./restoredb.sh
 ```
 
 ## Testing your queries
@@ -54,7 +54,7 @@ There are a few ways that you can test your queries. These are listed in order o
 ### Local MySQL instance via command line
 Running MySQL via its command-line utility puts you in direct contact with the database, with no middleman. In a Terminal window, run
 ```
-mysql -usql_selections -piloverelationaldata sql_selections
+$ mysql -usql_selections -piloverelationaldata sql_selections
 ```
 to connect (note the lack of spaces after the `-u` and `-p` flags).
 
@@ -69,7 +69,7 @@ Note that if you test your queries here, not only may the data/results be slight
 ### The `sql-selections run` command
 You may use the build-in `run` command by placing your query in the solution file and running:
 ```
-sql-selections run solution.js
+$ sql-selections run solution.js
 ```
 This will display the results of your query in a [JSON](http://en.wikipedia.org/wiki/JSON)-like format. These results may look a bit different from what you see when interacting more directly with MySQL, and error messages may be mixed in with Javascript errors, and thus harder to decipher, so this is the least-recommended method of testing your queries.
 
@@ -78,18 +78,18 @@ If you're new to SQL, spend a couple of minutes reading the w3schools [SQL Intro
 
 You will also need to be comfortable with moving around within an SQL client. After logging in to a command-line client, see which databases are available for use:
 ```sql
-SHOW DATABASES;
+mysql> SHOW DATABASES;
 ```
 Hopefully, you see your `sql_selections` database listed. If not, you might have a permissions error. Now, tell MySQL that you want to use that database:
 ```sql
-USE sql_selections;
+mysql> USE sql_selections;
 ```
 Now, you can which tables are part of the database, and which columns are in each table, by using the following commands.
 ```sql
-SHOW TABLES;
+mysql> SHOW TABLES;
 ```
 ```sql
-SHOW COLUMNS IN table_name;
+mysql> SHOW COLUMNS IN table_name;
 ```
 
 When writing queries, you'll have to properly specify column and table names, and these queries will help you figure out which names you should be using.
