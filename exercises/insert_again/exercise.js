@@ -15,7 +15,7 @@ function getIdColName(table) {
     var singularParts = table.match(/(\w+)ies$/);
 
     if (singularParts) {
-        base =singularParts[1];
+        base = singularParts[1] + "y";
     } else {
         base = table.slice(0,-1);
     }
